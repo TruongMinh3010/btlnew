@@ -1,0 +1,126 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: #fff; color: #333; line-height: 1.6; }
+    header, footer { padding: 2rem; background-color: #0e1a26; color: white; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; }
+    nav ul { display: flex; list-style: none; gap: 2rem; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
+    nav .active { border-bottom: 2px solid #b58534; color: #b58534; }
+    .btn-booking { background-color: #b58534; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; }
+    .container { max-width: 1200px; margin: auto; padding: 2rem; }
+    .form-section { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+    .form-box, .room-box { background: #f9f9f9; padding: 2rem; border-radius: 10px; flex: 1; min-width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .form-box input, .form-box textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; }
+    .form-box label { font-weight: 600; display: block; margin-top: 1rem; }
+    .room-box img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
+    .room-box img:hover { transform: scale(1.05); }
+    .room-box h3 { margin-top: 1rem; }
+    .checkbox-group { margin-top: 2rem; }
+    .checkbox-group label { display: block; margin-bottom: 0.8rem; }
+    .submit-btn { margin-top: 2rem; width: 100%; background: #b58534; color: white; border: none; padding: 1rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    footer input { padding: 0.6rem; border-radius: 6px; border: none; width: 100%; max-width: 300px; }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-menu { list-style: none; margin-top: 1rem; }
+    .footer-menu li { margin-bottom: 0.5rem; color: #ddd; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      margin-top: 1rem;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .tour-info {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .image-container {
+      flex: 1 1 300px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+
+    .tour-details {
+      flex: 1 1 300px;
+      padding: 1rem;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #1e40af;
+      margin-top: 0.5rem;
+    }
+
+    .confirm label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    #confirmBtn {
+      background: #1e40af;
+      color: white;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    #confirmBtn:hover {
+      background: #1a3a94;
+    }

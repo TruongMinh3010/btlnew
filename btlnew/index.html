@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đặt phòng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+  <nav>
+    <div><strong>Logo</strong></div>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="">Room & Suites</a></li>
+      <li><a href="#">Restaurant & Bar</a></li>
+    </ul>
+    <button class="btn-booking">Booking Tour</button>
+  </nav>
+
+  
+</head>
+<body>
+  <div class="container">
+    <h1>XÁC NHẬN THÔNG TIN TOUR</h1>
+
+    <div class="card form-grid">
+      <input type="text" placeholder="Họ tên" />
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Số điện thoại" />
+      <input type="text" placeholder="Địa chỉ" />
+      <input type="text" placeholder="Số hộ chiếu (nếu có)" />
+    </div>
+
+    <div class="card tour-info">
+      <div class="image-container">
+        <img src="./du-lich-ha-noi.jpg" alt="Tour Hà Nội" />
+      </div>
+      <div class="tour-details">
+        <h2>Tour Hà Nội</h2>
+        <label>Ngày khởi hành:
+          <input type="date" id="startDate" />
+        </label>
+        <label>Số người:
+          <input type="number" id="numPeople" min="1" placeholder="Nhập số người" />
+        </label>
+        <div id="totalPrice" class="price" style="display: none;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Dịch vụ bổ sung</h3>
+      <label><input type="checkbox" value="pickup" /> Đưa đón tận nhà - 150.000 VND</label>
+      <label><input type="checkbox" value="insurance" /> Bảo hiểm du lịch - 100.000 VND</label>
+      <label><input type="checkbox" value="guide" /> Hướng dẫn viên riêng - 300.000 VND</label>
+      <textarea placeholder="Yêu cầu đặc biệt"></textarea>
+    </div>
+
+    <div class="confirm">
+      <label><input type="checkbox" id="confirmCheck" /> Tôi xác nhận thông tin tour là chính xác</label>
+      <button id="confirmBtn">XÁC NHẬN ĐẶT TOUR</button>
+    </div>
+  </div>
+
+  <script>
+    const pricePerPerson = 1750000;
+    const startDateInput = document.getElementById('startDate');
+    const numPeopleInput = document.getElementById('numPeople');
+    const totalPriceDiv = document.getElementById('totalPrice');
+
+    function updatePrice() {
+      const startDate = startDateInput.value;
+      const numPeople = parseInt(numPeopleInput.value);
+      if (startDate && numPeople > 0) {
+        const total = numPeople * pricePerPerson;
+        totalPriceDiv.textContent = "Tổng giá: " + total.toLocaleString("vi-VN") + " VND";
+        totalPriceDiv.style.display = "block";
+      } else {
+        totalPriceDiv.style.display = "none";
+      }
+    }
+
+    startDateInput.addEventListener('input', updatePrice);
+    numPeopleInput.addEventListener('input', updatePrice);
+
+    document.getElementById('confirmBtn').addEventListener('click', function () {
+      const confirmCheck = document.getElementById('confirmCheck');
+      if (!confirmCheck.checked) {
+        alert('Vui lòng xác nhận thông tin trước khi đặt tour.');
+      } else {
+        alert('Thông tin tour đã được xác nhận thành công!');
+      }
+    });
+  </script>
+   <footer>
+    <div class="footer-col">
+      <h3>If you have any question,<br>Let us help you!</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <input type="email" placeholder="Input your email here">
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>Home</li>
+        <li>Room & Suites</li>
+        <li>Packages</li>
+        <li>Voucher</li>
+        <li>Promo</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>About Us</li>
+        <li>Restaurant & Bar</li>
+        <li>Events</li>
+        <li>Gallery</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <ul class="footer-menu">
+        <li>Our Team</li>
+        <li>Blog</li>
+        <li>Contact Us</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
